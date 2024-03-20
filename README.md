@@ -24,13 +24,29 @@ terraform-eks-modules
     ├── sample.tfvars - terraform.tfvars without values
     ├── provider.tf
     ├── variables.tf
-    ├── lacals.tf
+    ├── lacal.tf
     ├── $(services).tf
     └── etc ...
 ```
 
 ## How to Start
+
+### 1. AWSCLI SSO 로그인
+
 ```bash
+# 첫 생성시
+$ aws configure sso
+
+# 로그인
+$ aws sso login --profile 프로필이름
+```
+
+### 2. terraform 명령어
+
+```bash
+# sso 정보로 terraform 사용시
+$ export AWS_PROFILE=프로필이름
+
 $ cd terraform
 
 # terraform provider install
