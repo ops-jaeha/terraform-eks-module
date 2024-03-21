@@ -1,5 +1,6 @@
-# terraform eks module
-IaC for EKS in AWS Service
+# terraform private eks module
+- Automate VPC creation
+- Create Private EKS use eks modules in terraform
 
 ## How to Install
 
@@ -7,7 +8,7 @@ IaC for EKS in AWS Service
 - Ubuntu 20.04
 
 ### Terraform Install
-Terraform 설치는 [링크](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)를 참고 해주세요.
+Terraform 설치는 [link](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)를 참고 해주세요.
 
 ## File Tree
 ```
@@ -31,21 +32,21 @@ terraform-eks-modules
 
 ## How to Start
 
-### 1. AWSCLI SSO 로그인
+### 1. AWSCLI SSO Login
 
 ```bash
-# 첫 생성시
+# if you first use sso in awscli
 $ aws configure sso
 
-# 로그인
-$ aws sso login --profile 프로필이름
+# if you required sso login
+$ aws sso login --profile profile_name
 ```
 
-### 2. terraform 명령어
+### 2. terraform command
 
 ```bash
-# sso 정보로 terraform 사용시
-$ export AWS_PROFILE=프로필이름
+# terraform use sso
+$ export AWS_PROFILE=profile_name
 
 $ cd terraform
 
